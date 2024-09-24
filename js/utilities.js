@@ -9,7 +9,7 @@ function setElementByValue(id) {
   return parseTextValue;
 }
 
-function calculateAmount(id, accountBalance, totalAmount) {
+function calculateAmount(id, accountBalance, totalAmount, titleName) {
   // const feniAmountInput = setElementByValue("input-feni-amount");
   const regionAmountInputWithoutParsing = document.getElementById(id).value;
   const regionAmountInput = parseInt(regionAmountInputWithoutParsing);
@@ -20,6 +20,7 @@ function calculateAmount(id, accountBalance, totalAmount) {
   //   let feniTotalAmount = setElementByIdText("feni-total-amount");
   let regionTotalAmount = setElementByIdText(totalAmount);
   //   const overallFeniAmount = feniTotalAmount + feniAmountInput;
+  let nameOfTitle = document.getElementById(titleName).innerText;
   if (isNaN(regionAmountInput) || regionAmountInput < 0) {
     alert("Please enter a valid, non-negative donation amount.");
     return;
@@ -37,9 +38,12 @@ function calculateAmount(id, accountBalance, totalAmount) {
   //   document.getElementById("account-balance").innerText = remainingBalance;
   document.getElementById(accountBalance).innerText = remainingBalance;
   console.log(remainingBalance);
-
-  // console.log(overallFeniAmount);
-  let name = "ffg";
-  let parsed = parseInt(name);
-  console.log(typeof parsed);
+  const time = new Date();
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <div class='border border-black m-4 p-4'>
+  <h3 class='font-bold text-2xl'>${regionAmountInput} Tk is donated for ${nameOfTitle}</h3>
+  <p class='mt-2'>date: ${time}</p>
+  </div>`;
+  document.getElementById("history-section").appendChild(div);
 }

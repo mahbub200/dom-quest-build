@@ -53,17 +53,21 @@
         </div>
       </div>
       <div class="flex justify-center items-center gap-2 mt-12">
-        <button class="btn btn-active btn-primary">Donation</button>
-        <button class="btn btn-active btn-primary">History</button>
+        <button class="btn btn-active btn-primary" id="donation-button">
+          Donation
+        </button>
+        <button class="btn btn-active btn-primary" id="history-button">
+          History
+        </button>
       </div>
     </header>
     <!-- header end  -->
     <main>
       <!-- donation section started  -->
 
-      <section class="container">
+      <section class="container" id="donation-section">
         <!-- 1st card  -->
-        <div class="md:flex gap-4 p-4">
+        <div class="md:flex gap-4 p-4 bg-white shadow-xl rounded-lg border-r-2">
           <img class="md:w-100 mx-auto" src="./assets/noakhali.png" alt="" />
           <div class="space-y-12 p-10 md:p-0">
             <button class="btn btn-active btn-ghost">
@@ -71,7 +75,7 @@
               <p id="noakhali-total-amount">1000</p>
               <span> BDT</span>
             </button>
-            <h2 class="font-bold text-2xl">
+            <h2 class="font-bold text-2xl" id="noakhali-title">
               Donate for Flood at Noakhali, Bangladesh
             </h2>
             <p>
@@ -97,7 +101,9 @@
           </div>
         </div>
         <!-- 2nd card  -->
-        <div class="md:flex gap-4 p-4">
+        <div
+          class="md:flex gap-4 p-4 mt-4 bg-white shadow-xl rounded-lg border-r-2"
+        >
           <img class="md:w-100 mx-auto" src="./assets/feni.png" alt="" />
           <div class="space-y-12 p-10 md:p-0">
             <button class="btn btn-active btn-ghost">
@@ -105,7 +111,7 @@
               <p id="feni-total-amount">1000</p>
               <span> BDT</span>
             </button>
-            <h2 class="font-bold text-2xl">
+            <h2 class="font-bold text-2xl" id="feni-title">
               Donate for Flood Relief in Feni,Bangladesh
             </h2>
             <p>
@@ -133,7 +139,9 @@
           </div>
         </div>
         <!-- 3rd card  -->
-        <div class="md:flex gap-4 p-4">
+        <div
+          class="md:flex gap-4 p-4 mt-4 bg-white shadow-xl rounded-lg border-r-2"
+        >
           <img
             class="md:w-100 mx-auto"
             src="./assets/quota-protest.png"
@@ -145,7 +153,7 @@
               <p id="quota-total-amount">3000</p>
               <span> BDT</span>
             </button>
-            <h2 class="font-bold text-2xl">
+            <h2 class="font-bold text-2xl" id="quota-title">
               Aid for Injured in the Quota Movement
             </h2>
             <p>
@@ -171,6 +179,9 @@
           </div>
         </div>
       </section>
+      <!-- history section -->
+
+      <section id="history-section" class="hidden"></section>
     </main>
     <script src="js/utilities.js"></script>
 
