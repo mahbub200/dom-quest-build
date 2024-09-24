@@ -14,17 +14,19 @@ function calculateAmount(id, accountBalance, totalAmount, titleName) {
   const regionAmountInputWithoutParsing = document.getElementById(id).value;
   const regionAmountInput = parseInt(regionAmountInputWithoutParsing);
 
-  console.log(typeof regionAmountInput);
   //   const accountBalance = setElementByIdText("account-balance");
   const currentBalance = setElementByIdText(accountBalance);
   //   let feniTotalAmount = setElementByIdText("feni-total-amount");
   let regionTotalAmount = setElementByIdText(totalAmount);
   //   const overallFeniAmount = feniTotalAmount + feniAmountInput;
   let nameOfTitle = document.getElementById(titleName).innerText;
+  let modal = document.getElementById("my_modal_2");
   if (isNaN(regionAmountInput) || regionAmountInput < 0) {
+    modal.close();
     alert("Please enter a valid, non-negative donation amount.");
     return;
   } else if (regionAmountInput > currentBalance) {
+    modal.close();
     alert("Not enough balance in your account.so donate less");
     return;
   }
@@ -46,7 +48,7 @@ function calculateAmount(id, accountBalance, totalAmount, titleName) {
   <p class='mt-2'>date: ${time}</p>
   </div>`;
   document.getElementById("history-section").appendChild(div);
-  const modal = document.getElementById("my_modal_2");
+  // let modal = document.getElementById("my_modal_2");
 
   modal.showModal();
 }
